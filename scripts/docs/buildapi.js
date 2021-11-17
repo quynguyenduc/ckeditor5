@@ -15,12 +15,9 @@ module.exports = function buildApiDocs() {
 			// Patterns that do not start with '/' are mounted onto process.cwd() path by default.
 			readmePath: 'README.md',
 			sourceFiles: [
-				'packages/@(ckeditor|ckeditor5)-*/src/**/*.@(js|jsdoc)',
-				'!packages/@(ckeditor|ckeditor5)-*/src/lib/**/*.js',
-				'!packages/ckeditor5-build-*/src/**/*.js',
-				'external/*/packages/@(ckeditor|ckeditor5)-*/src/**/*.@(js|jsdoc)',
-				'!external/*/packages/@(ckeditor|ckeditor5)-*/src/lib/**/*.js',
-				'!external/*/packages/ckeditor5-build-*/src/**/*.js'
+				'packages/ckeditor5-*/src/**/*.@(js|jsdoc)',
+				'!packages/ckeditor5-*/src/lib/**/*.js',
+				'!packages/ckeditor5-build-*/src/**/*.js'
 			],
 			validateOnly: process.argv.includes( '--validate-only' ),
 			strict: process.argv.includes( '--strict' )
