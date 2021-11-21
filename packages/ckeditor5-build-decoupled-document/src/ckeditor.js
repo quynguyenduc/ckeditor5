@@ -40,6 +40,7 @@ import Table from '@ckeditor/ckeditor5-table/src/table';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
 import TextTransformation from '@ckeditor/ckeditor5-typing/src/texttransformation';
 import CloudServices from '@ckeditor/ckeditor5-cloud-services/src/cloudservices';
+import HorizalLine from '@ckeditor/ckeditor5-horizontal-line/src/horizontalline.js';
 
 export default class DecoupledEditor extends DecoupledEditorBase {}
 
@@ -78,7 +79,8 @@ DecoupledEditor.builtinPlugins = [
 	PasteFromOffice,
 	Table,
 	TableToolbar,
-	TextTransformation
+	TextTransformation,
+	HorizalLine,
 ];
 
 // Editor configuration.
@@ -112,8 +114,10 @@ DecoupledEditor.defaultConfig = {
 			'mediaEmbed',
 			'|',
 			'undo',
-			'redo'
-		]
+			'redo',
+			'|',
+			'horizalLine',
+		],
 	},
 	image: {
 		resizeUnit: 'px',
@@ -123,16 +127,12 @@ DecoupledEditor.defaultConfig = {
 			'imageStyle:breakText',
 			'|',
 			'toggleImageCaption',
-			'imageTextAlternative'
-		]
+			'imageTextAlternative',
+		],
 	},
 	table: {
-		contentToolbar: [
-			'tableColumn',
-			'tableRow',
-			'mergeTableCells'
-		]
+		contentToolbar: ['tableColumn', 'tableRow', 'mergeTableCells'],
 	},
 	// This value must be kept in sync with the language defined in webpack.config.js.
-	language: 'en'
+	language: 'en',
 };
